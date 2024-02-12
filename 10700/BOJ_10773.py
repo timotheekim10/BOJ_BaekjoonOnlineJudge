@@ -9,13 +9,10 @@ k = int(input())
 for _ in range(k):
     num = int(input())
     if num == 0:
+        sum -= stack[-1]
         stack.pop()
     else:
+        sum += num
         stack.append(num)
 
-if len(stack) == 0:
-    print(0)
-else:
-    for num in stack:
-        sum += num
-    print(sum)
+print(sum)
