@@ -11,21 +11,15 @@ for _ in range(n):
 
 for i in range(n-7):
     for j in range(m-7):
-        order, cnt = 0, 0
-        temp = True
+        cnt = 0
         for k in range(i, i+8):
             for l in range(j, j+8):
-                if order%8 == 0:
-                    temp = temp
-                else:
-                    temp = not temp
-                if temp:
+                if (k+l)%2 == 0:
                     color = 'W'
                 else:
                     color = 'B'
                 if chess[k][l] != color:
                     cnt += 1
-                order += 1
         if cnt > 32:
             cnt = 64 - cnt
         cnt_lst.append(cnt)
